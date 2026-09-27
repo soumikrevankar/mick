@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crochet by Mick | Handmade Crochet</title>
+
+<style>
+
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fffaf8;
+    color: #49353d;
+    line-height: 1.6;
+}
+
+
+/* ===== HEADER ===== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(255, 250, 248, 0.97);
+    box-shadow: 0 3px 20px rgba(80, 40, 50, 0.10);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #8d5368;
+}
+
+.logo span {
+    color: #c47f98;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5d454e;
+    margin-left: 25px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b45f7c;
+}
+
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 70px 20px;
+
+    background:
+        radial-gradient(circle at 10% 20%, #f8dce5, transparent 35%),
+        radial-gradient(circle at 90% 80%, #eadcf4, transparent 35%),
+        #fffaf8;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    color: #b66a83;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: 1.05;
+
+    color: #49353d;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #b96d87;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+
+    color: #715d65;
+}
+
+.divider {
+    color: #c98ba0;
+    font-size: 22px;
+    margin: 25px 0;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+}
+
+
+/* ===== BUTTONS ===== */
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+    margin: 6px;
+
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-main {
+    background: #b66b85;
+    color: white;
+}
+
+.btn-main:hover {
+    background: #8d5368;
+    transform: translateY(-3px);
+}
+
+.btn-light {
+    border: 1px solid #c58da0;
+    color: #8d5368;
+}
+
+.btn-light:hover {
+    background: #f7e3e9;
+}
+
+
+/* ===== SHOP ===== */
+
+.products-section {
+    padding: 90px 6%;
+    background: white;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading small {
+    color: #b66b85;
+
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    color: #49353d;
+
+    margin: 10px 0;
+}
+
+.section-heading p {
+    font-family: Arial, sans-serif;
+    color: #806c74;
+}
+
+
+/* ===== PRODUCTS GRID ===== */
+
+.products {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 30px;
+}
+
+
+/* ===== PRODUCT CARD ===== */
+
+.product-card {
+    overflow: hidden;
+
+    background: #fffaf8;
+
+    border-radius: 25px;
+
+    border: 1px solid #f2e0e6;
+
+    box-shadow: 0 10px 35px rgba(75, 53, 64, 0.10);
+
+    transition: 0.35s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(75, 53, 64, 0.17);
+}
+
+.product-image {
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.product-info {
+    padding: 22px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 22px;
+    color: #513944;
+
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    min-height: 65px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    color: #79666d;
+}
+
+.price {
+    color: #b15f7b;
+
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+.order-btn {
+    display: inline-block;
+
+    background: #b66b85;
+    color: white;
+
+    padding: 11px 23px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: #8d5368;
+}
+
+
+/* ===== FEATURES ===== */
+
+.features {
+    padding: 75px 6%;
+    background: #fffaf8;
+}
+
+.feature-grid {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
+    gap: 25px;
+}
+
+.feature {
+    background: white;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(75, 53, 64, 0.08);
+}
+
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    color: #583e48;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #806d74;
+}
+
+
+/* ===== ABOUT ===== */
+
+.about {
+    padding: 100px 8%;
+
+    background: #f8e8ed;
+
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.about h2 {
+    font-size: 40px;
+    color: #513944;
+
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+
+    color: #705b64;
+}
+
+
+/* ===== CONTACT ===== */
+
+.contact {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at top left, #f7dce5, transparent 35%),
+        #fffaf8;
+}
+
+.contact h2 {
+    font-size: 42px;
+
+    color: #49353d;
+
+    margin-bottom: 15px;
+}
+
+.contact p {
+    font-family: Arial, sans-serif;
+
+    color: #705b64;
+
+    margin: 10px;
+}
+
+.contact a {
+    color: #a95d78;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.social {
+    margin-top: 25px;
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: #49353d;
+
+    color: #f9e9ee;
+
+    font-family: Arial, sans-serif;
+}
+
+footer h3 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #f7cbd8;
+    text-decoration: none;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .contact h2 {
+        font-size: 32px;
+    }
+
+    .product-image {
+        height: 300px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        🧶 Crochet <span>by Mick</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Handmade • Heartmade • Yours
+        </div>
+
+        <h1>
+            Little pieces of<br>
+            <span>handmade happiness.</span>
+        </h1>
+
+        <p>
+            Welcome to Crochet by Mick — a little corner
+            filled with handmade crochet flowers, bouquets,
+            cute keychains, adorable characters and
+            unique gifts made with love.
+        </p>
+
+        <div class="divider">
+            ✦ 🧶 ✦
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="#shop" class="btn btn-main">
+                Explore Collection
+            </a>
+
+            <a href="#contact" class="btn btn-light">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<section class="products-section" id="shop">
+
+    <div class="section-heading">
+
+        <small>Our Collection</small>
+
+        <h2>Made With Love 🧶</h2>
+
+        <p>
+            Handmade crochet pieces created specially for you.
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- GANESHA -->
+
+        <div class="product-card">
+
+            <img
+                src="ganesha.jpg"
+                class="product-image"
+                alt="Crochet Ganesha"
+            >
+
+            <div class="product-info">
+
+                <h3>🪷 Crochet Ganesha</h3>
+
+                <p>
+                    Beautiful handmade crochet Ganesha,
+                    perfect for gifting and decoration.
+                </p>
+
+                <div class="price">
+                    ₹299
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="mailto:shamik1224@gmail.com?subject=Order - Crochet Ganesha"
+                >
+                    Order by Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FISH -->
+
+        <div class="product-card">
+
+            <img
+                src="fish.jpg"
+                class="product-image"
+                alt="Crochet Fish"
+            >
+
+            <div class="product-info">
+
+                <h3>🐟 Crochet Fish</h3>
+
+                <p>
+                    Cute handmade crochet fish,
+                    perfect as a gift or decorative piece.
+                </p>
+
+                <div class="price">
+                    ₹129
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="mailto:shamik1224@gmail.com?subject=Order - Crochet Fish"
+                >
+                    Order by Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FLOWER BOUQUET -->
+
+        <div class="product-card">
+
+            <img
+                src="bouquet.jpg"
+                class="product-image"
+                alt="Crochet Flower Bouquet"
+            >
+
+            <div class="product-info">
+
+                <h3>💐 Crochet Flower Bouquet</h3>
+
+                <p>
+                    Colourful handmade crochet flowers
+                    arranged into an everlasting bouquet.
+                </p>
+
+                <div class="price">
+                    ₹399
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="mailto:shamik1224@gmail.com?subject=Order - Crochet Flower Bouquet"
+                >
+                    Order by Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUNFLOWER KEYCHAIN -->
+
+        <div class="product-card">
+
+            <img
+                src="sunflower-keychain.jpg"
+                class="product-image"
+                alt="Crochet Sunflower Keychain"
+            >
+
+            <div class="product-info">
+
+                <h3>🌻 Sunflower Keychain</h3>
+
+                <p>
+                    Bright handmade sunflower keychain
+                    for bags, keys and accessories.
+                </p>
+
+                <div class="price">
+                    ₹99
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="mailto:shamik1224@gmail.com?subject=Order - Sunflower Keychain"
+                >
+                    Order by Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DAISY KEYCHAIN -->
+
+        <div class="product-card">
+
+            <img
+                src="daisy-keychain.jpg"
+                class="product-image"
+                alt="Crochet Daisy Keychain"
+            >
+
+            <div class="product-info">
+
+                <h3>🌼 Daisy Keychain</h3>
+
+                <p>
+                    Cute handmade daisy keychain
+                    with a soft and charming look.
+                </p>
+
+                <div class="price">
+                    ₹79
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="mailto:shamik1224@gmail.com?subject=Order - Daisy Keychain"
+                >
+                    Order by Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOON STAR -->
+
+        <div class="product-card">
+
+            <img
+                src="moon-star-keychain.jpg"
+                class="product-image"
+                alt="Crochet Moon and Star Keychains"
+            >
+
+            <div class="product-info">
+
+                <h3>🌙 Moon & Star Keychains</h3>
+
+                <p>
+                    Adorable crochet moon and star pair,
+                    perfect for bags and gifting.
+                </p>
+
+                <div class="price">
+                    ₹99
+                </div>
